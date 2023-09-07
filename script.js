@@ -3,39 +3,39 @@ let display = document.getElementById('display')
 let input = document.getElementById('input');
 
 
-let todos = [];
+let datas = [];
 window.onload = ()=>{
-    todos = JSON.parse(localStorage.getItem('todos')) || []
-    todos.forEach(todo=>addtodo(todo))
+    datas = JSON.parse(localStorage.getItem('datas')) || []
+    datas.forEach(data=>adddata(data))
 }
 
 button.addEventListener('click',()=>{
-    todos.push(input.value)
-    localStorage.setItem('todos',JSON.stringify(todos))
-    addtodo(input.value)
+    datas.push(input.value)
+    localStorage.setItem('datas',JSON.stringify(datas))
+    adddata(input.value)
     input.value=''
 })
 
-function addtodo(todo){
+function adddata(data){
     let para = document.createElement('p');
-    para.innerText = todo;
+    para.innerText = data;
     display.appendChild(para)
     
     para.addEventListener('click',()=>{
         para.style.textDecoration = 'line-through'
-        remove(todo)
+        remove(data)
     })
     para.addEventListener('dblclick',()=>{
         display.removeChild(para)
-        remove(todo)
+        remove(data)
     })
 }
 
-function remove(todo){
-    let index = todos.indexOf(todo)
+function remove(data){
+    let index = datas.indexOf(data)
     if (index > -1) {
-        todos.splice(index, 1);
+        datas.splice(index, 1);
       }
 
-    localStorage.setItem('todos',JSON.stringify(todos))
+    localStorage.setItem('datas',JSON.stringify(datas))
 }
