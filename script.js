@@ -138,7 +138,9 @@ function dataCheck() {
     password.value == data.password &&
     terms
   ) {
-    window.location = "http://127.0.0.1:5500/main.html";
+     
+
+    window.location = "https://htmlpreview.github.io/?https://github.com/Iamvijay17/ToDo-List/blob/NewTodo/main.html";
   } else {
     // setErr([username,password], "Enter the correct details")
     alert("Enter the correct details");
