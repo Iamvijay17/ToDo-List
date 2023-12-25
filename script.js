@@ -9,7 +9,7 @@ function signUp(e) {
   if (!signUpValidation()) {
     event.preventDefault();
   } else {
-    alert("Successfully Registered");
+   
     //============= localStorage =============//
 
     let user = {
@@ -19,6 +19,10 @@ function signUp(e) {
     };
     let jsonformat = JSON.stringify(user);
     localStorage.setItem(signUpName.value, jsonformat);
+
+      alert("Successfully Registered");
+
+    window.location = "https://htmlpreview.github.io/?https://github.com/Iamvijay17/ToDo-List/blob/NewTodo/login.html";
   }
 }
 
